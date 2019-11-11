@@ -1,5 +1,3 @@
-#ifndef CIRCULAR_DEQUE_H
-#define CIRCULAR_DEQUE_H
 #include <iostream>
 typedef struct DequeData DequeData_t ;
 struct DequeData {
@@ -144,5 +142,4 @@ public:
     }
 };
 
-#endif
 
