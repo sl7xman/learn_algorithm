@@ -38,7 +38,14 @@ void dynamic_programming1( int arr[], int n, int w, int states[10]) {
     int j = 0;
 
     for ( i = 1; i < n; ++i ) {
-        for ( j = 0; j < w+1; ++j ) {
+        for ( j = w - arr[i]; j >= 0; --j ) {
+            printf("i=%d j=%d\n", i, j);
+            if ( states[j] == 1 ) {
+                states[ j + arr[i] ] = 1;    
+            }    
+        }
+
+/*        for ( j = 0; j < w+1; ++j ) {
             printf("i=%d j=%d\n", i, j);
             if ( states[j] == 1 ) {
                 if ( j + arr[i] <= w ) {
@@ -46,6 +53,7 @@ void dynamic_programming1( int arr[], int n, int w, int states[10]) {
                 }
             }    
         }    
+  */
     }
 
     for ( j = 0; j < w; ++j ) {
